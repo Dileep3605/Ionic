@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Activities</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card *ngFor="let item of activities" no-margin>
+
+          <ion-card-content >
+            <div style="display:flex;align-items: center;">
+                <ion-icon name="beer" margin-end style="font-size: 60px;"></ion-icon>
+                <ion-icon name="cafe-outline"></ion-icon>
+              <div>
+                <ion-text>
+                  <p>
+                    {{item.description}}
+                  </p>
+                </ion-text>
+                <ion-text color="success">
+                  <p >You spent &#8377;{{item.amount}}</p>
+                </ion-text>
+
+                <ion-label>
+                  {{item.date | date:'LLL dd'}}
+                </ion-label>
+
+              </div>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
