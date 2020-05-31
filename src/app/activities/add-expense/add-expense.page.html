@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
@@ -11,8 +11,8 @@
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
-        <ion-card>
-          <ion-card-header>New Expenses</ion-card-header>
+        <ion-card class="ion-no-margin">
+          <ion-card-header>New Expense</ion-card-header>
           <ion-card-content>
             <form
               #addExpenses="ngForm"
@@ -36,7 +36,7 @@
                   required
                 ></ion-input>
               </ion-item>
-              <div margin-vertical text-right>
+              <div class="ion-margin-vertical text-right">
                 <ion-button
                   fill="outline"
                   color="danger"

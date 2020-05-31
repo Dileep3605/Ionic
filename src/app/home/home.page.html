@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>
       BudgetPlanner
     </ion-title>
@@ -7,58 +7,59 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid no-margin no-padding>
-    <ion-row no-margin>
-      <ion-col size-md="6" offset-md="3" no-padding>
-        <ion-card no-margin style="box-shadow: none; background: #f5f5f5;">
-          <ion-card-content>
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-            >
-              <div style="display: flex;">
-                <ion-avatar margin-end>
-                  <ion-img [src]="userDefaultImage"> </ion-img>
-                </ion-avatar>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card
+          style="box-shadow: none; background: #f5f5f5;"
+          class="ion-no-margin"
+        >
+          <ion-card-content
+            class="ion-justify-content-between ion-align-items-center display-flex"
+          >
+            <div class="display-flex ion-align-items-center">
+              <ion-avatar class="ion-margin-end">
+                <ion-img [src]="userDefaultImage"> </ion-img>
+              </ion-avatar>
+              <div>
                 <div>
-                  <div>
+                  <ion-text color="dark">
                     <h2>Budget</h2>
-                    <h1 slot="end">&#8377;{{BudgetSet}}</h1>
-                  </div>
+                  </ion-text>
+                  <ion-text color="primary">
+                    <h1>&#8377;{{BudgetSet}}</h1>
+                  </ion-text>
                 </div>
               </div>
-              <ion-icon
-                name="funnel"
-                slot="end"
-                style="font-size: 20px;"
-                (click)="presentActionSheet()"
-              ></ion-icon>
             </div>
+            <ion-icon
+              name="filter-outline"
+              slot="end"
+              style="font-size: 20px;"
+              (click)="presentActionSheet()"
+            ></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid no-margin no-padding>
-    <ion-row no-margin>
-      <ion-col size-md="6" offset-md="3" no-padding>
-        <ion-card>
-          <ion-card-content>
-            <h2>Spending</h2>
-            <h1 slot="end">&#8377;{{BudgetSpending}}</h1>
-            <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-md="6" offset-md="3" no-padding>
-        <ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card class="ion-no-margin">
           <ion-card-content>
             <h2>Remaining</h2>
             <h1 slot="end">&#8377;{{BudgetRemaining}}</h1>
             <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card class="ion-no-margin">
+          <ion-card-content>
+            <h2>Spending</h2>
+            <h1 slot="end">&#8377;{{BudgetSpending}}</h1>
+            <ion-progress-bar color="warning" value="0.5"></ion-progress-bar>
           </ion-card-content>
         </ion-card>
       </ion-col>
